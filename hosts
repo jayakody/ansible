@@ -6,7 +6,7 @@ password=password
 10.8.23.15    ansible_user=admin
 
 [qa]
-10.8.7.214    ansible_user=admin
+1.8.7.214    ansible_user=admin
 qa-spark1     ansible_user=bsn
 qa-spark2     ansible_user=bsn
 
