@@ -89,7 +89,7 @@ RETURN = '''
 import os
 import sys
 #sys.path.append('/root/Ansible/big-ansible/modules')
-sys.path.append('/var/lib/awx/projects/Tesla/modules')
+sys.path.append('/var/lib/awx/projects/_11__github/modules')
 
 #from ansible.module_utils.basic import AnsibleModule
 from ansible.module_utils.basic import *
