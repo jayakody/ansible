@@ -1,0 +1,13 @@
+---
+- hosts: 10.8.23.15
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: Create/Delete tenant
+      bcf_tenant:
+          controller: '{{ inventory_hostname }}'
+          name: ansibleTenant
+          state: present
+          validate_certs: false
+          access_token: 'cKofbLReIVoi--5heuF4jUqLyeanvS3b'
+
