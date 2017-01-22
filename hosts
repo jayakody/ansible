@@ -5,25 +5,5 @@ password=password
 [cont15]
 10.8.23.15    ansible_user=admin
 
-[qa]
-10.8.7.214    ansible_user=admin
-qa-spark1     ansible_user=bsn
-qa-spark2     ansible_user=bsn
 
-[qa-controllers]
-10.8.7.214    ansible_user=admin
 
-[qa-servers]
-qa-spark1     ansible_user=bsn
-qa-spark2     ansible_user=bsn
-
-[tme-bmf-controllers]
-10.2.19.102   primary_switch_dpid='00:00:cc:37:ab:2c:97:ea' backup_switch_dpid='00:00:cc:37:ab:2c:97:ea'
-
-[bmf-inline-staging]
-52.90.81.106 primary_switch_dpid='00:00:00:00:00:00:00:0a' backup_switch_dpid='00:00:00:00:00:00:00:0a'
-
-[bmf-inline-production]
-54.165.53.223 primary_switch_dpid='00:00:00:00:00:00:00:0a' backup_switch_dpid='00:00:00:00:00:00:00:0a'
-54.89.91.157 primary_switch_dpid='00:00:00:00:00:00:00:0a' backup_switch_dpid='00:00:00:00:00:00:00:0a'
-52.90.167.241 primary_switch_dpid='00:00:00:00:00:00:00:0a' backup_switch_dpid='00:00:00:00:00:00:00:0a'
