@@ -1,0 +1,33 @@
+---
+- hosts: 10.8.23.15
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: Create/Delete tenant
+      bcf_tenant:
+          controller: '{{ inventory_hostname }}'
+          name: ansibleTenant
+          state: present
+          validate_certs: false
+          access_token: 'pFoM_KlxCCANDUUywJInulipYVQgjA88'
+
+    - name: Create/Delete segment
+      bcf_segment:
+          controller: '{{ inventory_hostname }}'
+          tenantName: ansibleTenant
+          segmentName: ansibleSegment
+          tenantState: present
+          segmentState: present
+          validate_certs: false
+          access_token: 'pFoM_KlxCCANDUUywJInulipYVQgjA88'
+
+    - name: Create/Delete logical router
+      bcf_logicalrouter:
+          controller: '{{ inventory_hostname }}'
+          tenantName: ansibleTenant
+          segmentName: ansibleSegment
+          ipcidr: '2.2.2.2/24'
+          segIntState: present
+          validate_certs: false
+          access_token: 'pFoM_KlxCCANDUUywJInulipYVQgjA88'
+
