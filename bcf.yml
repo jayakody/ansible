@@ -9,7 +9,6 @@
           name: auto_tenant1
           state: present
           validate_certs: false
-          access_token: 'q5aK_OXXgiTiiCbf3j6x8tEBu4qORQzu'
 
     - name: Create/Delete segment
       bcf_segment:
@@ -19,7 +18,6 @@
           tenantState: present
           segmentState: present
           validate_certs: false
-          access_token: 'q5aK_OXXgiTiiCbf3j6x8tEBu4qORQzu'
 
     - name: Create/Delete logical router
       bcf_logicalrouter:
@@ -29,5 +27,4 @@
           ipcidr: '2.2.2.2/24'
           segIntState: present
           validate_certs: false
-          access_token: 'q5aK_OXXgiTiiCbf3j6x8tEBu4qORQzu'
 
