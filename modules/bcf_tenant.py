@@ -88,18 +88,13 @@ RETURN = '''
 
 import os
 import sys
-#sys.path.append('/root/Ansible/big-ansible/modules')
 sys.path.append('/var/lib/awx/projects/_11__github/modules')
 
-#from ansible.module_utils.basic import AnsibleModule
 from ansible.module_utils.basic import *
-#from ansible.module_utils.bigswitch_utils import Rest, Response
 from bigswitch_utils import Rest, Response
 from ansible.module_utils.pycompat24 import get_exception
-#from pycompat24 import get_exception
-#from bsn_rest import BcfRest
 
-def chain(module):
+def bcf_tenant(module):
     try:
         access_token = module.params['access_token'] or os.environ['BIGSWITCH_ACCESS_TOKEN']
     except KeyError:
@@ -135,7 +130,6 @@ def chain(module):
         
     if state in ('present'):
 	response = rest.put('/tenant[name="%s"]' % name,  data={"name": name})
-#        response = rest.put('chain[name="%s"]' % name, data={'name': name})
         if response.status_code == 204:
             module.exit_json(changed=True)
         else:
@@ -143,7 +137,6 @@ def chain(module):
 
     if state in ('absent'):
 	response = rest.delete('tenant[name="%s"]' % name, data={})
-#        response = rest.delete('chain[name="%s"]' % name, data={})
         if response.status_code == 204:
             module.exit_json(changed=True)
         else:
@@ -161,7 +154,7 @@ def main():
     )
 
     try:
-        chain(module)
+        bcf_tenant(module)
     except Exception:
         e = get_exception()
         module.fail_json(msg=str(e))
