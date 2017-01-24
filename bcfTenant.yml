@@ -7,7 +7,7 @@
       bcf_tenant:
           name: '{{ item.name }}'
           controller: '{{ inventory_hostname }}'
-          state: present
+          state: absent
           validate_certs: false
           access_token: 'PSQYiiz8PfQUGdRfisC627BNutB-dfZB'
       with_items:
