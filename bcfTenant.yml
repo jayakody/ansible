@@ -5,29 +5,13 @@
   tasks:
     - name: Create/Delete tenant
       bcf_tenant:
+          name: '{{ item.name }}'
           controller: '{{ inventory_hostname }}'
-          name: ansibleTenant
           state: present
           validate_certs: false
-          access_token: 'pFoM_KlxCCANDUUywJInulipYVQgjA88'
-
-    - name: Create/Delete segment
-      bcf_segment:
-          controller: '{{ inventory_hostname }}'
-          tenantName: ansibleTenant
-          segmentName: ansibleSegment
-          tenantState: present
-          segmentState: present
-          validate_certs: false
-          access_token: 'pFoM_KlxCCANDUUywJInulipYVQgjA88'
-
-    - name: Create/Delete logical router
-      bcf_logicalrouter:
-          controller: '{{ inventory_hostname }}'
-          tenantName: ansibleTenant
-          segmentName: ansibleSegment
-          ipcidr: '2.2.2.2/24'
-          segIntState: present
-          validate_certs: false
-          access_token: 'pFoM_KlxCCANDUUywJInulipYVQgjA88'
-
+          access_token: 'PSQYiiz8PfQUGdRfisC627BNutB-dfZB'
+      with_items:
+        - { name: 'testtenant1' }
+        - { name: 'testtenant2' }
+ 
+   
