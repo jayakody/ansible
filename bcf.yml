@@ -1,5 +1,5 @@
 ---
-- hosts: 10.8.23.15
+- hosts: BCF-Controller
   connection: local
   gather_facts: no
   tasks:
@@ -8,5 +8,3 @@
           controller: '{{ inventory_hostname }}'
           name: auto_tenant1
           state: present
-          validate_certs: false
-          access_token: 'FJze_a9Ho6LDrvFOAWpO3UXuTs0rfR7M'
