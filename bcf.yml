@@ -10,24 +10,3 @@
           state: present
           validate_certs: false
           access_token: 'PSQYiiz8PfQUGdRfisC627BNutB-dfZB'
-
-    - name: Create/Delete segment
-      bcf_segment:
-          controller: '{{ inventory_hostname }}'
-          tenantName: auto_tenant1
-          segmentName: auto_segment1
-          tenantState: present
-          segmentState: present
-          validate_certs: false
-          access_token: 'PSQYiiz8PfQUGdRfisC627BNutB-dfZB'
-
-    - name: Create/Delete logical router
-      bcf_logicalrouter:
-          controller: '{{ inventory_hostname }}'
-          tenantName: auto_tenant1
-          segmentName: auto_segment1
-          ipcidr: '2.2.2.2/24'
-          segIntState: present
-          validate_certs: false
-          access_token: 'PSQYiiz8PfQUGdRfisC627BNutB-dfZB'
-
