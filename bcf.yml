@@ -1,5 +1,5 @@
 ---
-- hosts: BCF-Controller
+- hosts: 10.8.23.15
   connection: local
   gather_facts: no
   tasks:
@@ -8,6 +8,8 @@
           controller: '{{ inventory_hostname }}'
           name: auto_tenant1
           state: present
+          validate_certs: false
+          access_token: 'qwdQnLKh865FUMWsQGNYunuleNdT2nqH'
 
     - name: Create/Delete segment
       bcf_segment:
@@ -16,12 +18,16 @@
           segmentName: auto_segment1
           tenantState: present
           segmentState: present
+          validate_certs: false
+          access_token: 'qwdQnLKh865FUMWsQGNYunuleNdT2nqH'
 
     - name: Create/Delete logical router
       bcf_logicalrouter:
           controller: '{{ inventory_hostname }}'
           tenantName: auto_tenant1
           segmentName: auto_segment1
-          ipcidr: '1.1.1.1/24'
+          ipcidr: '2.2.2.2/24'
           segIntState: present
+          validate_certs: false
+          access_token: 'qwdQnLKh865FUMWsQGNYunuleNdT2nqH'
 
